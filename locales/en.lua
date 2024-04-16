@@ -1,0 +1,18 @@
+Locales["en"] = {
+    ["bank"] = "Bank",
+    ["bank_menu"] = "Bank Menu",
+    ["bank_balance"] = "Bank Balance",
+    ["money"] = "Money",
+    ["withdraw"] = "Withdraw",
+    ["deposit"] = "Deposit",
+    ["transfer"] = "Transfer",
+    ["press_to_open"] = "Press ~INPUT_CONTEXT~ to open the bank menu",
+    ["withdraw_amount"] = "Withdraw Amount",
+    ["deposit_amount"] = "Deposit Amount",
+    ["transfer_amount"] = "Transfer Amount",
+    ["transfer_target"] = "Transfer Target",
+    ["invalid_amount"] = "Invalid Amount",
+    ["invalid_target"] = "Invalid Target",
+    ["cant_transfer_to_self"] = "You can't transfer money to yourself",
+    ["atm"] = "ATM",
+}
