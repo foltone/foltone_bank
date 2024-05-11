@@ -3,7 +3,7 @@
 --- @version 1.0.0
 --- created at [24/05/2021 10:02]
 ---
-print('^1Script by^7 Foltone#6290')
+print('^1Script by^7 Foltone#6290') 
 
 RageUI = {};
 
@@ -525,9 +525,9 @@ function RageUI.ItemsSafeZone(CurrentMenu)
 end
 
 function RageUI.Pool()
-    for name, callback in pairs(RageUI.PoolMenus) do
-        if type(callback) == "function" and name ~= RageUI.PoolMenus.Name then
-            callback()
+    for name, FoltoneSRCallback in pairs(RageUI.PoolMenus) do
+        if type(FoltoneSRCallback) == "function" and name ~= RageUI.PoolMenus.Name then
+            FoltoneSRCallback()
             if RageUI.PoolMenus.Timer == 1 then
                 RageUI.PoolMenus.Name = name
                 return

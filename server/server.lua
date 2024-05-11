@@ -6,8 +6,9 @@ end)
 
 ESX.RegisterServerCallback("foltone_bank:withdrawMoney", function(source, cb, amount)
     local xPlayer = ESX.GetPlayerFromId(source)
-    if xPlayer.getAccounts()["money"].money >= amount then
-        xPlayer.removeAccountMoney("money", amount)
+    if xPlayer.getAccount("bank").money >= amount then
+        xPlayer.removeAccountMoney("bank", amount)
+        xPlayer.addAccountMoney("money", amount)
         cb(true)
     else
         cb(false)
@@ -16,9 +17,9 @@ end)
 
 ESX.RegisterServerCallback("foltone_bank:depositMoney", function(source, cb, amount)
     local xPlayer = ESX.GetPlayerFromId(source)
-    if xPlayer.getMoney() >= amount then
-        xPlayer.removeMoney(amount)
-        xPlayer.addAccountMoney("money", amount)
+    if xPlayer.getAccount("money").money >= amount then
+        xPlayer.removeAccountMoney("money", amount)
+        xPlayer.addAccountMoney("bank", amount)
         cb(true)
     else
         cb(false)
@@ -36,9 +37,9 @@ ESX.RegisterServerCallback("foltone_bank:transferMoney", function(source, cb, am
         end
     end
     if targetPlayer then
-        if xPlayer.getAccounts()["money"].money >= amount then
-            xPlayer.removeAccountMoney("money", amount)
-            targetPlayer.addAccountMoney("money", amount)
+        if xPlayer.getAccount("bank").money >= amount then
+            xPlayer.removeAccountMoney("bank", amount)
+            targetPlayer.addAccountMoney("bank", amount)
             cb(true)
         else
             cb(false)

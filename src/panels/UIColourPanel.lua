@@ -14,7 +14,7 @@ local Colour = {
 ---@param Colours thread
 ---@param MinimumIndex number
 ---@param CurrentIndex number
----@param FoltoneARCallback function
+---@param FoltoneSRCallback function
 ---@return nil
 ---@public
 function Items:ColourPanel(Title, Colours, MinimumIndex, CurrentIndex, Actions, Index, Style)

@@ -1,5 +1,5 @@
 Config = {
-    Locale = "en",
+    Locale = "fr",
     BankPosition = {
 		vector3(150.26, -1040.2, 29.37),
 		vector3(-1212.98, -330.84, 37.78),
@@ -79,9 +79,17 @@ Config = {
 		vector3(5.134, -919.949, 29.557)
     },
 
-	Notigication = function(message)
+	Notification = function(message)
         SetNotificationTextEntry("STRING")
         AddTextComponentString(message)
         DrawNotification(false, false)
+    end,
+	Marker = function(coords)
+        DrawMarker(6, coords.x, coords.y, coords.z - 0.98, 0.0, 0.0, 9.0, 0.0, 0.0, 0.0, 0.5, 1.0, 0.5, 46, 204, 113, 200, false, false, 2, false, false, false, false)
+    end,
+	DisplayText = function(text)
+        SetTextComponentFormat("STRING")
+        AddTextComponentString(text)
+        DisplayHelpTextFromStringLabel(0, 0, 1, -1)
     end,
 }
